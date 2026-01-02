@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <main>
+        <div id="login" class="container">
+            <h2>Login</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" oninput="getInputValue(this)" placeholder="example@gmail.com"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" oninput="getInputValue(this)" placeholder="••••••••"
+                        required />
+                </div>
+                <button id="loginBtn">Login</button>
+            </form>
+            <div class="footer-text">
+                Don't have an account? <a href="#" onclick="changeUI(event)">Create Account</a>
+            </div>
+        </div>
+
+        <div id="register" class="container hidden">
+            <h2>Create Account</h2>
+            <p>Register to access your dashboard</p>
+
+            <form id="registerForm">
+                <div class="row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" oninput="getInputValue(this)" placeholder="John" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" oninput="getInputValue(this)" placeholder="Doe" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" oninput="getInputValue(this)" placeholder="john@example.com"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" oninput="getInputValue(this)" placeholder="••••••••"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmPassword" oninput="getInputValue(this)" placeholder="••••••••"
+                        required />
+                </div>
+
+                <button type="submit" id="registerBtn">Register</button>
+            </form>
+
+            <div class="footer-text">
+                Already have an account? <a href="#" onclick="changeUI(event)">Login</a>
+            </div>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
