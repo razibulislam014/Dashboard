@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics</title>
+    <link rel="stylesheet" href="css/analytics.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>SmartDash</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li class="active">Analytics</li>
+                <li><a href="settings.html">Settings</a></li>
+                <li>Logout</li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <h1>Analytics</h1>
+                <div>Last 7 Days</div>
+            </div>
+
+            <!-- Stats -->
+            <section class="stats">
+                <div class="card">
+                    <h3>Visitors</h3><span>12,450</span>
+                </div>
+                <div class="card">
+                    <h3>Page Views</h3><span>38,920</span>
+                </div>
+                <div class="card">
+                    <h3>Conversions</h3><span style="color:var(--accent)">4.6%</span>
+                </div>
+                <div class="card">
+                    <h3>Bounce Rate</h3><span style="color:var(--danger)">38%</span>
+                </div>
+            </section>
+
+            <!-- Charts -->
+            <section class="charts">
+                <div class="card">
+                    <h3>Weekly Activity</h3>
+                    <div class="chart-box">
+                        <div class="bar" style="height:60%">Mon</div>
+                        <div class="bar green" style="height:75%">Tue</div>
+                        <div class="bar" style="height:50%">Wed</div>
+                        <div class="bar orange" style="height:85%">Thu</div>
+                        <div class="bar" style="height:65%">Fri</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Traffic Sources</h3>
+                    <ul class="traffic">
+                        <li>Direct <span>45%</span></li>
+                        <li>Social <span>30%</span></li>
+                        <li>Referral <span>15%</span></li>
+                        <li>Email <span>10%</span></li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

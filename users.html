@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="css/users.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>SmartDash</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li class="active">Users</li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li>Logout</li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <h1>Users</h1>
+                <div class="actions">
+                    <input type="text" placeholder="Search user..." />
+                    <button>Add User</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>UserName</th>
+                            <th>Email</th>
+                            <th>Website</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTable"></tbody>
+                </table>
+
+                <div class="pagination">
+                    <div class="page">1</div>
+                    <div class="page active">2</div>
+                    <div class="page">3</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+
+</html>
