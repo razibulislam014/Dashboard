@@ -43,12 +43,21 @@ if (location.pathname === "/index.html")
   dashboardUserTable.appendChild(fragment);
 })();
 
+function showDetails(id) {
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+
+  document.getElementById("vName");
+}
+
 // This is Users Page section
 (async () => {
   const users = await getusers();
   const fragment = document.createDocumentFragment();
+  console.log(users);
 
-  users.forEach(({ name, email, username, website }) => {
+  users.forEach(({ name, email, username, website, id }) => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `<td>${name}</td>
@@ -58,7 +67,9 @@ if (location.pathname === "/index.html")
                               website || "Unavailable"
                             }</span></td>
                             <td>
-                                <button class="btn btn-view">View</button>
+                                <button class="btn btn-view"  onclick="showDetails(
+                                  id
+                                )">View</button>
                                 <button class="btn btn-delete">Delete</button>
                             </td>
     `;

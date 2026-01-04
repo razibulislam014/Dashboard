@@ -54,6 +54,61 @@
 
         </main>
     </div>
+
+    <!-- Details -->
+
+
+
+    <div class="modal" id="viewModal">
+        <div class="overlay"></div>
+        <div class="view-card">
+
+            <!-- Header -->
+            <div class="view-header">
+                <div class="avatar" id="vAvatar">JD</div>
+                <div>
+                    <h2 id="vName">John Doe</h2>
+                    <p class="username" id="vUsername">@johndoe</p>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="view-body">
+                <div class="info">
+                    <span>Email</span>
+                    <p id="vEmail"></p>
+                </div>
+
+                <div class="info">
+                    <span>Phone</span>
+                    <p id="vPhone"></p>
+                </div>
+
+                <div class="info">
+                    <span>Address</span>
+                    <p id="vAddress"></p>
+                </div>
+
+                <div class="info">
+                    <span>Website</span>
+                    <p id="vWebsite"></p>
+                </div>
+
+                <div class="info">
+                    <span>Current Company</span>
+                    <p id="vCompany"></p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="view-actions">
+                <button class="btn cancel" onclick="closeView()">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+
     <script type="module" src="js/dashboard.js"></script>
 </body>
 
