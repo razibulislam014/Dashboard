@@ -3,6 +3,7 @@ import { getusers } from "./api.js";
 const logedUser = document.getElementById("user");
 const dashboardUserTable = document.getElementById("userList");
 const usersTable = document.getElementById("usersTable");
+const closeView = document.getElementById("closeView");
 
 const user = localStorage.getItem("user");
 const conObj = JSON.parse(user);
@@ -46,7 +47,20 @@ if (location.pathname === "/index.html")
 function showDetails(id) {
   fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      document.getElementById("viewModal").style.display = "block";
+      document.getElementById("vName").innerHTML = data.name;
+      document.getElementById("vUsername").innerHTML = data.username;
+      document.getElementById("vEmail").innerHTML = data.email;
+      document.getElementById("vPhone").innerHTML = data.phone;
+      document.getElementById("vAddress").innerHTML = data.address.city;
+      document.getElementById("vWebsite").innerHTML = data.website;
+      document.getElementById("vCompany").innerHTML = data.company.name;
+      document.getElementById("vAvatar").innerHTML = data.name
+        .split(" ")
+        .map((n) => n[0])
+        .join("");
+    });
 
   document.getElementById("vName");
 }
@@ -67,9 +81,7 @@ function showDetails(id) {
                               website || "Unavailable"
                             }</span></td>
                             <td>
-                                <button class="btn btn-view"  onclick="showDetails(
-                                  id
-                                )">View</button>
+                                <button class="btn btn-view" data-id="${id}">View</button>
                                 <button class="btn btn-delete">Delete</button>
                             </td>
     `;
@@ -77,4 +89,18 @@ function showDetails(id) {
   });
 
   usersTable.appendChild(fragment);
+
+  document.addEventListener("click", (e) => {
+    const viewBtn = e.target.closest(".btn-view");
+    if (!viewBtn) return;
+
+    const id = viewBtn.dataset.id;
+    showDetails(id);
+  });
 })();
+
+function closeViewF() {
+  document.getElementById("viewModal").style.display = "none";
+}
+
+closeView.addEventListener("click", closeViewF);
